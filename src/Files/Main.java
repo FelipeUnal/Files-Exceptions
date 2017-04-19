@@ -5,6 +5,7 @@
  */
 package Files;
 import java.io.*;
+import java.util.Scanner;
 
 /**
  *
@@ -13,14 +14,21 @@ import java.io.*;
 public class Main {
     public static void main(String[] args) throws FileNotFoundException{
         
-        PrintStream output = new PrintStream (new File("hello.txt"));
+        PrintStream output = new PrintStream (new File("Hello.txt"));
         output.println("Hello World!");
         output.println();
-        output.println("This program produces four");
-        output.println("lines of output.");
+        output.println("I'm the netbeans brain");
+        output.println("please, program documents.");
         
+        Scanner input = new Scanner(new File("Hello.txt"));
+        int count = 0;
+        while(input.hasNext()){
+            String word = input.next();
+            count++;
+        }
+        System.out.println("Total words: "+count);
         
-        File f = new File("hello.txt");
+        File f = new File("Hello.txt");
         System.out.println("exist returns :" + f.exists());
         System.out.println("canRead returns :" + f.canRead());
         System.out.println("lehgth returns :" + f.length());
